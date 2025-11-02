@@ -9,11 +9,15 @@ let logger: Logger = Logger(subsystem: "io.mikeli.tether", category: "Tether")
 ///
 /// The default implementation merely loads the `ContentView` for the app and logs a message.
 /* SKIP @bridge */public struct TetherRootView : View {
+
     /* SKIP @bridge */public init() {
     }
 
+    @State var model = AppModel()
+    
     public var body: some View {
         ContentView()
+            .environment(model)
             .task {
                 logger.info("Skip app logs are viewable in the Xcode console for iOS; Android logs can be viewed in Studio or using adb logcat")
             }
