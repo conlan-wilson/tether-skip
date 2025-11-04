@@ -1,0 +1,91 @@
+{
+  "fill" : {
+    "solid" : "extended-gray:1.00000,1.00000"
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "blend-mode" : "normal",
+          "fill-specializations" : [
+            {
+              "value" : {
+                "solid" : "display-p3:0.00000,0.00000,0.00000,1.00000"
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
+              }
+            },
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
+              }
+            }
+          ],
+          "glass" : true,
+          "image-name" : "TetherLogo1.003.png",
+          "name" : "TetherLogo1.003",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              25,
+              0
+            ]
+          }
+        },
+        {
+          "blend-mode" : "normal",
+          "fill-specializations" : [
+            {
+              "value" : {
+                "solid" : "display-p3:0.51301,0.51301,0.51301,1.00000"
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
+              }
+            },
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "display-p3:1.00000,1.00000,1.00000,1.00000"
+              }
+            }
+          ],
+          "glass" : true,
+          "hidden" : true,
+          "image-name" : "TetherLogo1.004.png",
+          "name" : "TetherLogo1.004",
+          "opacity" : 1,
+          "position" : {
+            "scale" : 1.5,
+            "translation-in-points" : [
+              76.7578125,
+              -119.859375
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

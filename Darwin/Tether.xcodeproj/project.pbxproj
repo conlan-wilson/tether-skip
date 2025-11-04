@@ -12,6 +12,8 @@
 		496BDBEE2B8A7E9C00C09264 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 496BDBED2B8A7E9C00C09264 /* Localizable.xcstrings */; };
 		499CD43B2AC5B799001AE8D8 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F90C2B2A52156200F06D93 /* Main.swift */; };
 		499CD4402AC5B799001AE8D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F90C2F2A52156300F06D93 /* Assets.xcassets */; };
+		5AD26F4D2EB939C80071293E /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 5AD26F4C2EB939C80071293E /* AppIcon.icon */; };
+		5ADD57D62EB979DF00CE23D2 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADD57D52EB979DF00CE23D2 /* LaunchView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +42,8 @@
 		49F90C2B2A52156200F06D93 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main.swift; path = Sources/Main.swift; sourceTree = SOURCE_ROOT; };
 		49F90C2F2A52156300F06D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F90C312A52156300F06D93 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.plist; sourceTree = "<group>"; };
+		5AD26F4C2EB939C80071293E /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		5ADD57D52EB979DF00CE23D2 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		49F90C1F2A52156200F06D93 = {
 			isa = PBXGroup;
 			children = (
+				5ADD57D52EB979DF00CE23D2 /* LaunchView.xib */,
+				5AD26F4C2EB939C80071293E /* AppIcon.icon */,
 				496EB72F2A6AE4DE00C1253C /* README.md */,
 				496EB72F2A6AE4DE00C1253A /* Skip.env */,
 				496EB72F2A6AE4DE00C1253B /* Tether.xcconfig */,
@@ -158,6 +164,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ADD57D62EB979DF00CE23D2 /* LaunchView.xib in Resources */,
+				5AD26F4D2EB939C80071293E /* AppIcon.icon in Resources */,
 				499CD4402AC5B799001AE8D8 /* Assets.xcassets in Resources */,
 				496BDBEE2B8A7E9C00C09264 /* Localizable.xcstrings in Resources */,
 			);
@@ -183,7 +191,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/sh -e";
-			shellScript = "if [ \"${SKIP_ZERO}\" != \"\" ]; then\n  echo \"note: skipping skip due to SKIP_ZERO\"\n  exit 0\nelif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"note: skipping skip due to ENABLE_PREVIEWS\"\n  exit 0\nelif [ \"${ACTION}\" = \"install\" ]; then\n  echo \"note: skipping skip due to archive install\"\n  exit 0\nelif [ \"${SKIP_ACTION}\" = \"none\" ]; then\n  echo \"note: skipping skip due to SKIP_ACTION none\"\n  exit 0\nelse\n  SKIP_ACTION=\"${SKIP_ACTION:-launch}\"\nfi\nPATH=${BUILD_ROOT}/Debug:${BUILD_ROOT}/../../SourcePackages/artifacts/skip/skip/skip.artifactbundle/macos:${PATH}:${HOMEBREW_PREFIX:-/opt/homebrew}/bin\necho \"note: running gradle build with: $(which skip) gradle -p ${PWD}/../Android ${SKIP_ACTION:-launch}${CONFIGURATION:-Debug}\"\nskip gradle -p ../Android ${SKIP_ACTION:-launch}${CONFIGURATION:-Debug}\n";
+			shellScript = "if [ \"${SKIP_ZERO}\" != \"\" ]; then\n  echo \"note: skipping skip due to SKIP_ZERO\"\n  exit 0\nelif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"note: skipping skip due to ENABLE_PREVIEWS\"\n  exit 0\nelif [ \"${ACTION}\" = \"install\" ]; then\n  echo \"note: skipping skip due to archive install\"\n  exit 0\nelif [ \"${SKIP_ACTION}\" = \"none\" ]; then\n  echo \"note: skipping skip due to SKIP_ACTION none\"\n  exit 0\nelse\n  SKIP_ACTION=\"${SKIP_ACTION:-launch}\"\nfi\nPATH=${BUILD_ROOT}/Debug:${BUILD_ROOT}/../../SourcePackages/artifacts/skip/skip/skip.artifactbundle/macos:${PATH}:${HOMEBREW_PREFIX:-/opt/homebrew}/bin\necho \"note: running gradle build with: $(which skip) gradle -p ${PWD}/../Android ${SKIP_ACTION:-launch}${CONFIGURATION:-Debug}\"\n# skip gradle -p ../Android ${SKIP_ACTION:-launch}${CONFIGURATION:-Debug}\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -207,6 +215,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchView;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -221,6 +230,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchView;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

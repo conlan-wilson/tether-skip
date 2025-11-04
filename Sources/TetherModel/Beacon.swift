@@ -6,15 +6,38 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum BeaconStatus: String, Codable, CaseIterable, Identifiable, Sendable {
     case ok, help, moving
     public var id: String { rawValue }
     public var label: String {
         switch self {
-        case .ok: return "OK"
-        case .help: return "Need help"
+        case .ok: return "Ok"
+        case .help: return "Need Help"
         case .moving: return "Moving"
+        }
+    }
+    public var image: String {
+        switch self {
+        case .ok: return "checkmark.shield.fill"
+        case .help: return "xmark.shield.fill"
+        case .moving: return "exclamationmark.shield.fill"
+        }
+    }
+    public var color: Color {
+        switch self {
+        case .ok: return Color.green
+        case .help: return Color.red
+        case .moving: return Color.yellow
+        }
+    }
+    
+    public var backgroundColor: Color {
+        switch self {
+        case .ok: return Color.green
+        case .help: return Color.red
+        case .moving: return Color.orange
         }
     }
 }

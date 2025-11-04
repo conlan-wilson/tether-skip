@@ -24,6 +24,7 @@ let package = Package(
         .target(name: "TetherModel", dependencies: [
             .product(name: "SkipFuse", package: "skip-fuse"),
             .product(name: "SkipModel", package: "skip-model"),
+            .product(name: "SkipFuseUI", package: "skip-fuse-ui")
         ], plugins: [.plugin(name: "skipstone", package: "skip")]),
     ]
 )

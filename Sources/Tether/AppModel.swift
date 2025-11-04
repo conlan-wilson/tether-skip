@@ -8,6 +8,7 @@
 import Observation
 import SkipFuse
 import TetherModel
+import SwiftUI
 
 @MainActor
 @Observable
@@ -17,6 +18,8 @@ final public class AppModel {
     public var myStatus: BeaconStatus = .ok
     public var note: String = ""
     public var ttlMinutes: Int = 15
+    public var tethered: Bool = false
+    public var tetheredAnimation: Bool = false
 
     let service: BeaconService = LocalBeaconService.shared
     var token: BeaconService.ListenerToken?
@@ -31,14 +34,10 @@ final public class AppModel {
 
     @MainActor
     deinit {
-    
-            if let token {
-                let svc = service
-            
-                    svc.removeListener(token)
-                
-            }
-       
+        if let token {
+            let svc = service
+            svc.removeListener(token)
+        }
     }
 
     public func send(status: BeaconStatus? = nil) {
@@ -52,9 +51,19 @@ final public class AppModel {
             await MainActor.run { self.note = "" }
         }
     }
-
+    
+    public func tether() {
+        self.tethered = true
+        withAnimation{self.tetheredAnimation = true}
+    }
+    
+    public func untether() {
+        self.tethered = false
+        withAnimation{self.tetheredAnimation = false}
+    }
+    
     public var myShortId: String {
-        let id = DeviceID.current.replacingOccurrences(of: "-", with: "")
+        let id = DeviceID.current.replacingOccurrences(of: "-", with: "-")
         return String(id.suffix(6))
     }
     
